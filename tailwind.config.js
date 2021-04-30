@@ -3,7 +3,21 @@ module.exports = {
   // https://tailwindcss.com/docs/just-in-time-mode
   // mode: "jit",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        blue: {
+          250: "#61DBFB",
+          350: "#0db7ed",
+          450: "#326ce5",
+          550: "#007acc",
+          650: "#0064a5",
+          750: "#06B6D4",
+        },
+        green: {
+          550: "#68A063",
+        },
+      },
+    },
   },
   darkMode: "media", // or 'media' or 'class'
   variants: {},
