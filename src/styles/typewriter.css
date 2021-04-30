@@ -1,0 +1,21 @@
+.typewriter-text {
+  position: relative;
+}
+
+.typewriter-text::before {
+  content: "|";
+  position: absolute;
+  background-color: white;
+  width: 10em;
+  animation: blinkTextCursor 2s ease-out infinite alternate;
+}
+
+@keyframes blinkTextCursor {
+  0% {
+    transform: translate(0px);
+  }
+
+  100% {
+    transform: translate(9em);
+  }
+}
