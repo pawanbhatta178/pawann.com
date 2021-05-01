@@ -1,0 +1,28 @@
+.scroll-container {
+  animation: scroll-left 70s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(-110em);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .scroll-container {
+    animation: scroll-left 60s ease-in-out infinite alternate;
+    z-index: 1;
+  }
+  @keyframes scroll-left {
+    0% {
+      transform: translate(0px);
+    }
+    100% {
+      transform: translate(-80em);
+    }
+  }
+}

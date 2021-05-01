@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
+import '../../styles/horizontalScroll.css';
+import { Link } from "./Link";
 
 interface CardProps{
     title: string;
@@ -17,12 +19,40 @@ interface ScrollingCardsProps{
     cards: CardProps[];
 }
 
+const rotationClasses:string[] = ["rotate-2","rotate-2", "rotate-1", "rotate-1","-rotate-1","-rotate-2", "-rotate-2", "-rotate-1"];
 
-const Card: React.FC<CardProps> = (props:CardProps) => {
-    return <div className="shadow-lg rounded-xl flex-none w-80 md:w-xl">
-        <div>{props.title}</div>
-        <div>{ props.shortDescription}</div>
-        <div>{props.technologies }</div>
+
+const getRandomRotationClass = (): string => {
+    const theRandomNumber = Math.floor(Math.random() * 8);
+    return rotationClasses[theRandomNumber];
+}
+
+
+const Card: React.FC<CardProps> = (props: CardProps) => {
+    const [readMoreToggle, setReadMoreToggle] = useState<boolean>(false);
+
+    const onReadMoreClick = () => {
+        setReadMoreToggle(!readMoreToggle);
+    }
+
+    return <div className={ `p-6 bg-white transition duration-300 ease-in-out shadow-lg rounded-xl flex-none w-11/12 sm:w-1/2 md:w-1/3 lg:1/4 transform ${getRandomRotationClass()} hover:rotate-0`}>
+        <div className="flex h-full">
+            <div className="flex-1 flex flex-col">
+                <div className="flex-1 ">Picture</div>
+                <div className=" h-1/5 ">Languages</div>
+            </div>
+            <div className="flex-1 flex flex-col h-full">
+                <div className="overflow-auto h-4/5  ">
+                    <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-gray-900 mb-3 sticky top-0 bg-white">{props.title}</h2>
+                    <div className="text-gray-500 text-sm font-light  mx-auto mb-6">{props.shortDescription}</div>
+                    {readMoreToggle && <div className="text-gray-500 text-sm font-light  mx-auto mb-6">{ props.description}</div>}
+                    <Link name={readMoreToggle?"Less":"Read More"}  onClick={onReadMoreClick} />
+                </div>
+                <div className="h-1/5">Link</div>
+            </div>
+            
+        </div>
+        
     </div>
 }
 
@@ -30,9 +60,12 @@ const Card: React.FC<CardProps> = (props:CardProps) => {
 
 const HorizontalScrollingCards: React.FC<ScrollingCardsProps> = ({cards}) => {
     return (
-        <div>
+        <>
+        <div className="absolute right-0 bottom-1/2 left-0 bg-gradient-to-t from-gray-100 pointer-events-none h-20"></div>
+        <div className="flex  space-x-12 scroll-container ">
             {cards.map(card => <Card key={card.title} {...card} />)}
-        </div>
+            </div>
+         </>
     )
 }
 

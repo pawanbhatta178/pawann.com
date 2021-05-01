@@ -99,7 +99,7 @@ function App() {
         <p className=" text-gray-500 max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6  mx-auto mb-6">I've been involved in several different projects ranging from low level codes written in C++ like <span className="font-mono text-gray-900 font-bold ">CPU schedulers</span>  and <span className="font-mono text-gray-900 font-bold ">memory allocation simulators</span> to mid level codes for <span className="font-mono text-gray-900 font-bold ">image processing</span> and <span className="font-mono text-gray-900 font-bold ">computer vision</span>  to high level full stack <span className="font-mono text-gray-900 font-bold ">web application development</span>.   </p>
         <button className="w-full sm:w-auto flex-none bg-green-550 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-10 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 shadow-2xl"> Contact Me</button>
       </section>
-      <section>
+      <section className="relative">
 
         <HorizontalScrollingCards cards={myWorks} />
 
