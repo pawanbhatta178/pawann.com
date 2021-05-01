@@ -1,12 +1,12 @@
 import React from 'react'
-import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs } from "react-icons/si";
-
+import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell } from "react-icons/si";
+import { GoLinkExternal } from "react-icons/go";
 
 interface TechnologyIconsProps  {
     name:string
 }
 
-        const TechnologyIcon: React.FC<TechnologyIconsProps> = ({ name }) => {
+ const TechnologyIcon: React.FC<TechnologyIconsProps> = ({ name }) => {
             if (name === "typescript") {
                 return <SiTypescript className="inline-flex text-blue-550"/>
             }
@@ -30,11 +30,33 @@ interface TechnologyIconsProps  {
             }
             else if (name ==="node.js") {
                 return <SiNodeDotJs className="inline-flex text-green-550"/>
+            }
+            else if (name ==="java") {
+                return <SiJava className="inline-flex text-red-500"/>
+            }
+            else if (name==="shell") {
+                return <SiPowershell className="inline-flex text-blue-550"/>
                 }
             else {
                 return <SiReact className="inline-flex" />
             }
         }
 
+interface iconProps{
+    name: string;
+}
 
-export { TechnologyIcon };
+
+
+const Icon: React.FC<iconProps> = ({ name }) => {
+    if (name === "external_link") {
+        return <GoLinkExternal className="inline-flex"/>
+    }
+    else {
+        return null;
+    }
+}
+
+
+
+export { TechnologyIcon, Icon };
