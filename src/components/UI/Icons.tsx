@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell, SiRedis, SiNginx, SiGooglecloud, SiAmazonaws, SiJavascript } from "react-icons/si";
+import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell, SiRedis, SiNginx, SiGooglecloud, SiAmazonaws, SiJavascript, SiPython , SiApachespark, SiCss3, SiGit} from "react-icons/si";
 import { GoLinkExternal } from "react-icons/go";
 
 interface TechnologyIconsProps  {
@@ -51,6 +51,18 @@ interface TechnologyIconsProps  {
             }
             else if (name ==="javascript") {
                 return <SiJavascript className="inline-flex text-yellow-450 bg-gray-550 "/>
+            }
+            else if (name ==="python") {
+                return <SiPython className="inline-flex text-blue-850 "/>
+            }
+            else if (name ==="spark") {
+                return <SiApachespark className="inline-flex text-red-350 "/>
+            }
+            else if (name ==="css") {
+                return <SiCss3 className="inline-flex text-blue-550 "/>
+            }
+            else if (name==="git") {
+                return <SiGit className="inline-flex text-red-550 "/>
                 }
             else {
                 return <SiReact className="inline-flex" />
@@ -60,13 +72,14 @@ interface TechnologyIconsProps  {
 
 interface iconProps{
     name: string;
+    className?: string;
 }
 
 
 
-const Icon: React.FC<iconProps> = ({ name }) => {
+const Icon: React.FC<iconProps> = ({ name, className }) => {
     if (name === "external_link") {
-        return <GoLinkExternal className="inline-flex"/>
+        return <GoLinkExternal className={`inline-flex ${className}`}/>
     }
     else {
         return null;

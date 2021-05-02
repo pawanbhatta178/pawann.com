@@ -12,6 +12,7 @@ module.exports = {
           550: "#007acc",
           650: "#0064a5",
           750: "#06B6D4",
+          850: "#306998", //python blue
           950: "#4285f4", //google blue
         },
         green: {
@@ -21,9 +22,10 @@ module.exports = {
         yellow: {
           550: "#fbbc05", //google yellow
           750: "#FF9900", //amazon yellow
-          450: "#f0db4f", //javascript yello
+          450: "#f0db4f", //javascript yellow
         },
         red: {
+          350: "#812878", //spark red
           550: "#D82C20", //redis red
           650: "#ea4335", //google red
         },

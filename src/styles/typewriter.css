@@ -1,5 +1,6 @@
 .typewriter-text::before {
   content: "|";
+  text-align: left;
   position: absolute;
   background-color: white;
   width: 9em;
@@ -18,6 +19,7 @@
 
 .typewriter-text-sm::before {
   content: "|";
+  text-align: left;
   position: absolute;
   background-color: white;
   width: 4em;
@@ -36,6 +38,7 @@
 
 .typewriter-text-md::before {
   content: "|";
+  text-align: left;
   position: absolute;
   background-color: white;
   width: 6.5em;
@@ -54,6 +57,7 @@
 
 .typewriter-text-lg::before {
   content: "|";
+  text-align: left;
   position: absolute;
   background-color: white;
   width: 7em;

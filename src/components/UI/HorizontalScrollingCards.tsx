@@ -4,6 +4,7 @@ import { Link } from "./Link";
 import {TechnologyIcon, Icon  } from "./Icons";
 import {Button, buttonType} from "./Button";
 import { LanguageCard} from "./LanguageCard";
+import {handleRedirectionToExternalLink } from "../Logic/handleRedirectionToExternalLink";
 
 interface CardProps{
     title: string;
@@ -30,9 +31,6 @@ const getRandomRotationClass = (): string => {
     return rotationClasses[theRandomNumber];
 }
 
-const handleRedirectionToExternalLink = (url: string ): void => {
-    window.open(url, '_blank');
-}
 
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
@@ -57,7 +55,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
                 </div>
 
                 <div className="flex-initial flex flex-col pt-2">
-                {props?.link && <Button className="flex items-center justify-between" name="Live Demo" onClick={() =>handleRedirectionToExternalLink(props.link??"")} type={ buttonType.PRIMARY}  ><Icon name="external_link"/></Button>}
+                {props?.link && <Button className="flex items-center justify-between" name="Live Demo" onClick={() =>handleRedirectionToExternalLink(props.link??"")} type={ buttonType.NEUTRAL}  ><Icon name="external_link"/></Button>}
                 {props?.github && <Button className="flex items-center justify-between" name="Github" onClick={() => handleRedirectionToExternalLink(props.github??"")} type={buttonType.SECONDARY }><Icon name="external_link"/></Button>}
                 </div>
             

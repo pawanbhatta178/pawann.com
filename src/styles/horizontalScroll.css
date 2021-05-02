@@ -3,6 +3,12 @@
   z-index: 1;
 }
 
+.scroll-container:hover,
+.scroll-container:active,
+.scroll-container:focus {
+  animation-play-state: paused;
+}
+
 @keyframes scroll-left {
   0% {
     transform: translate(0px);
@@ -17,12 +23,17 @@
     animation: scroll-left 60s ease-in-out infinite alternate;
     z-index: 1;
   }
+  .scroll-container:hover,
+  .scroll-container:active,
+  .scroll-container:focus {
+    animation-play-state: paused;
+  }
   @keyframes scroll-left {
     0% {
       transform: translate(0px);
     }
     100% {
-      transform: translate(-80em);
+      transform: translate(-120em);
     }
   }
 }

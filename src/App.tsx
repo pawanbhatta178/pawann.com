@@ -3,12 +3,15 @@ import './styles/typewriter.css';
 import { AnimateKeywords } from "./components/UI/AnimateKeywords";
 import GitHubCalendar from "react-github-calendar";
 import {HorizontalScrollingCards } from "./components/UI/HorizontalScrollingCards";
-  
+import { Button, buttonType } from './components/UI/Button';
+import {Icon } from "./components/UI/Icons";
+import { handleRedirectionToExternalLink } from './components/Logic/handleRedirectionToExternalLink';
+
 
 const myWorks= [{
   title: "CodingRant- A coding challenge platform",
   languages: ["javascript", "typescript", "shell"],
-  technologies:["react", "node.js", "postgres", "redis", "docker", "nginx", "gcp"],
+  technologies:["react", "tailwind", "css", "node.js", "postgres", "redis", "docker", "nginx", "git","gcp"],
   shortDescription: "A web application that JS developers preparing for coding interviews can use to level up their JavaScript skills by solving daily coding challenge problems.",
   description: "Built a remote JS code executor micro service built using Node.js and Docker that can run various test cases in parallel and in isolation and returns the correctness and running time of user’s code. Integrated Nginx as API gateway that intercepts users requests and pass it to reliable micro services that might be running in different VM instances depending on payload of the requests. Implemented User Authentication features using JWT in such a way that each microservices can independently authenticate user’s requests without even having to query database. Implemented Bloom Filters using Redis in order to massively speed up the process of checking for available usernames and email during user registration process. Wrote my own simple ORM (Object Relational Mapper) that can generate postgres queries and run them which accelerated my development process by a lot. Wrote entire frontend with solid UI/UX design fundamentals in mind using React.js.",
   topics: ["Web Application Development", "UI/UX design","Backend Development","Microservices", "Contenarization"],
@@ -42,7 +45,7 @@ const myWorks= [{
     github:"https://github.com/pawanbhatta178/ComputerVision"
   },
   {
-    title: "Cloud Computing",
+    title: "Kubernetes Cluster in AWS and GCP",
     languages: ["shell"],
     technologies:["docker", "kubernetes", "aws", "gcp"],
     shortDescription: "Created Kubernetes cluster on both AWS and GCP. Mounted persisted volume using S3 buckets into pods in order provide persistence across sessions for databases.",
@@ -50,16 +53,15 @@ const myWorks= [{
     topics: ["Containers", "Container Orchestration", "Cloud Computing", "Virtual Machines"],
     github:"https://github.com/pawanbhatta178/CloudComputing"
   }, {
-    title: "Hadoop/Spark in Cloud",
+    title: "Spark Cluster in Cloud",
     languages: ["java", "python"],
-    technologies: ["spark", "hadoop", "hdfs", "vms", "aws", "gcp"],
+    technologies: ["spark", "vms", "aws", "gcp"],
     description: "Apache Spark has its architectural foundation in the resilient distributed dataset (RDD), a read-only multiset of data items distributed over a cluster of machines, that is maintained in a fault-tolerant way. The Dataframe API was released as an abstraction on top of the RDD, followed by the Dataset API. In Spark 1.x, the RDD was the primary application programming interface (API), but as of Spark 2.x use of the Dataset API is encouraged[3] even though the RDD API is not deprecated. The RDD technology still underlies the Dataset API.",
     shortDescription: "Deployed and Configured a Spark Cluster with one master and multiple slaves that has Apache Hadoop as the underlying file system and Apache Spark as the execution engine",
     topics: ["Distributed Computing", "Mapreduce", "Jobs"],
     github:"https://github.com/pawanbhatta178/CloudComputing"
     
 }]
-
 
 
   
@@ -79,7 +81,7 @@ function App() {
   return (
     <div className="space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 overflow-hidden mx-2 ">
       <nav ref={navRef}  className="h-14 flex items-center ">
-        <div className="page-component-wrapper w-full flex justify-between items-center">
+        <div className="page-component-wrapper w-full flex justify-between items-center ">
           <div className="font-semibold font-mono text-2xl primary-text-color">pawann</div>
           <div className=" w-1/2 lg:w-4/12 flex justify-around primary-text-color">
             <div className="link"  onClick={()=>handleScroll(headerRef)}>About</div>
@@ -88,26 +90,28 @@ function App() {
           </div>
         </div>
       </nav>
-      <header ref={headerRef } className="page-component-wrapper">
-        <div className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-10 mb-8 sm:mt-14 sm:mb-10">Hi, my name is <span className="primary-text-color"> Pawan Bhatta</span> </div>
-           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium ">I'm a full stack software engineer. I love building <span className="font-mono text-gray-900 font-bold "> web applications</span>  that can impact lives.</div>
-            <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">My favorite technologies rn are:<AnimateKeywords names={["typescript","react","tailwind", "postgres","node.js", "c++", "kubernetes", "docker"] }/>
-         </div>
-        <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-10 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 shadow-2xl"> Contact Me</button>
+      <header ref={headerRef } className="page-component-wrapper ">
+        <div className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-10 mb-8 sm:mt-14 sm:mb-10">Hi 👋, my name is <span className="primary-text-color"> Pawan Bhatta</span> </div>
+           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium ">I'm a full stack software engineer. I love building <span className="font-mono text-gray-900 font-bold "> web applications</span>  that can impact lives using various technologies.</div>
+           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">My goto toolbox includes:<AnimateKeywords names={["typescript","react","tailwind", "postgres","node.js", "c++", "kubernetes", "docker"] }/>
+        </div>
+        <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 text-center">
+          <Button name="Contact Me" type={buttonType.SECONDARY } onClick={()=>console.log("as") }/>
+          <Button name={"My Latest Project"} type={buttonType.NEUTRAL} onClick={() => handleRedirectionToExternalLink("https://www.codingrant.com")} ><Icon className="ml-2" name={"external_link"}/></Button >
+        </div>
       </header>
-      <section ref={workRef } className="page-component-wrapper text-center">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-green-700 tracking-tight mb-8">Some of my contributions.</h2>
+      <section ref={workRef} className="page-component-wrapper text-center">
+          <h2 className="z-0 text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-green-700 tracking-tight mb-8">Some of my contributions.</h2>
         <GitHubCalendar style={{ display: "flex", justifyContent: "center" }} username="pawanbhatta178" />
         <p className=" text-gray-500 max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6  mx-auto mb-6">I've been involved in several different projects ranging from low level codes written in C++ like <span className="font-mono text-gray-900 font-bold ">CPU schedulers</span>  and <span className="font-mono text-gray-900 font-bold ">memory allocation simulators</span> to mid level codes for <span className="font-mono text-gray-900 font-bold ">image processing</span> and <span className="font-mono text-gray-900 font-bold ">computer vision</span>  to high level full stack <span className="font-mono text-gray-900 font-bold ">web application development</span>.   </p>
-        <button className="w-full sm:w-auto flex-none bg-green-550 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-10 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 shadow-2xl"> Contact Me</button>
+          <button className="w-full sm:w-auto flex-none bg-green-550 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-10 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 shadow-2xl"> Contact Me</button>
+      
       </section>
       <section className="relative">
-
         <HorizontalScrollingCards cards={myWorks} />
-
       </section>
       <section ref={contactRef} className="page-component-wrapper text-center">
-     
+        
       </section>
       
      
