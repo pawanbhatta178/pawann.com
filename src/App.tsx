@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef} from 'react';
 import './styles/typewriter.css';
 import { AnimateKeywords } from "./components/UI/AnimateKeywords";
 import GitHubCalendar from "react-github-calendar";
@@ -6,7 +6,7 @@ import {HorizontalScrollingCards } from "./components/UI/HorizontalScrollingCard
 import { Button, buttonType } from './components/UI/Button';
 import {Icon } from "./components/UI/Icons";
 import { handleRedirectionToExternalLink } from './components/Logic/handleRedirectionToExternalLink';
-
+import {Logo } from "./components/UI/Logo";
 
 const myWorks= [{
   title: "CodingRant- A coding challenge platform",
@@ -82,7 +82,7 @@ function App() {
     <div className="space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 overflow-hidden mx-2 ">
       <nav ref={navRef}  className="h-14 flex items-center ">
         <div className="page-component-wrapper w-full flex justify-between items-center ">
-          <div className="font-semibold font-mono text-2xl primary-text-color">pawann</div>
+          <Logo/>
           <div className=" w-1/2 lg:w-4/12 flex justify-around primary-text-color">
             <div className="link"  onClick={()=>handleScroll(headerRef)}>About</div>
             <div className="link"  onClick={()=>handleScroll(workRef)}>Works</div>
@@ -92,8 +92,8 @@ function App() {
       </nav>
       <header ref={headerRef } className="page-component-wrapper ">
         <div className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-10 mb-8 sm:mt-14 sm:mb-10">Hi 👋, my name is <span className="primary-text-color"> Pawan Bhatta</span> </div>
-           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium ">I'm a full stack software engineer. I love building <span className="font-mono text-gray-900 font-bold "> web applications</span>  that can impact lives using various technologies.</div>
-           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">My goto toolbox includes:<AnimateKeywords names={["typescript","react","tailwind", "postgres","node.js", "c++", "kubernetes", "docker"] }/>
+           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium ">I'm a full stack software engineer. I like building simple, scalable, and efficient <span className="font-mono text-gray-900 font-bold "> web applications</span>  that can impact lives. My latest project is a coding challenge platform that I created to help people prepare for their coding interviews. </div>
+           <div className="text-gray-500 max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">My favorite technologies are:<AnimateKeywords names={["typescript","react","tailwind", "postgres","node.js", "c++", "kubernetes", "docker"] }/>
         </div>
         <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 text-center">
           <Button name="Contact Me" type={buttonType.SECONDARY } onClick={()=>console.log("as") }/>
@@ -101,10 +101,9 @@ function App() {
         </div>
       </header>
       <section ref={workRef} className="page-component-wrapper text-center">
-          <h2 className="z-0 text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-green-700 tracking-tight mb-8">Some of my contributions.</h2>
+          <h2 className="z-0 text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-green-700 tracking-tight mb-10">Some of my contributions in 2020/21.</h2>
         <GitHubCalendar style={{ display: "flex", justifyContent: "center" }} username="pawanbhatta178" />
-        <p className=" text-gray-500 max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6  mx-auto mb-6">I've been involved in several different projects ranging from low level codes written in C++ like <span className="font-mono text-gray-900 font-bold ">CPU schedulers</span>  and <span className="font-mono text-gray-900 font-bold ">memory allocation simulators</span> to mid level codes for <span className="font-mono text-gray-900 font-bold ">image processing</span> and <span className="font-mono text-gray-900 font-bold ">computer vision</span>  to high level full stack <span className="font-mono text-gray-900 font-bold ">web application development</span>.   </p>
-          <button className="w-full sm:w-auto flex-none bg-green-550 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-10 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 shadow-2xl"> Contact Me</button>
+        <p className=" text-gray-500 max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6  mx-auto mb-6 pt-6">I've been involved in several different projects ranging from low level codes written in C++ like <span className="font-mono text-gray-900 font-bold ">CPU schedulers</span>  and <span className="font-mono text-gray-900 font-bold ">memory allocation simulators</span> to mid level codes for <span className="font-mono text-gray-900 font-bold ">image processing</span> and <span className="font-mono text-gray-900 font-bold ">computer vision</span>  to high level full stack <span className="font-mono text-gray-900 font-bold ">web application development</span>.   </p>
       
       </section>
       <section className="relative">
