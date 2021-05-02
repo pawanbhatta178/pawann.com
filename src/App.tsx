@@ -17,7 +17,8 @@ const myWorks= [{
 },
   {
   title: "Image Processing",
-  languages: ["java", "c++"],
+    languages: ["java", "c++"],
+
   shortDescription: "Implemented various steps in digital image processing ranging from thresholding, noise filtering, and  image enhancement using various filters and masks. ",
   description: "Image Processing is the low level computer vision where processing unit is 'pixel to pixel'. Here various algorithms might be used to process an image. Usually the first step in image processing is conditioning. While doing conditioning, original image is scanned in order to remove noise and maybe even for smoothing purposes. This step is vital since later steps in Computer Vision depends highly on quality of processed image.  ",
   topics: ["Low Level Computer Vision", "Image Processing"],
@@ -34,6 +35,7 @@ const myWorks= [{
   {
     title: "Image Compression",
     languages: ["java", "c++"],
+
     shortDescription: "Implemented various algorithms that can compress image in lossless manner. Some of the techniques used for the compression are: Run length encoding, distance transform, thinning, chain code. ",
     description: "Lossless compression is a class of data compression algorithms that allows the original data to be perfectly reconstructed from the compressed data. By contrast, lossy compression permits reconstruction only of an approximation of the original data, though usually with greatly improved compression rates (and therefore reduced media sizes). ",
     topics: ["Image Compression"],

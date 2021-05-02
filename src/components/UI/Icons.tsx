@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell } from "react-icons/si";
+import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell, SiRedis, SiNginx, SiGooglecloud, SiAmazonaws, SiJavascript } from "react-icons/si";
 import { GoLinkExternal } from "react-icons/go";
 
 interface TechnologyIconsProps  {
@@ -36,10 +36,26 @@ interface TechnologyIconsProps  {
             }
             else if (name==="shell") {
                 return <SiPowershell className="inline-flex text-blue-550"/>
+            }
+            else if (name === "redis") {
+                return <SiRedis className="inline-flex text-red-550"/>
+            }
+            else if (name === "nginx") {
+                return <SiNginx className="inline-flex text-green-600"/>
+            }
+            else if (name ==="gcp") {
+                return <SiGooglecloud className="inline-flex text-yellow-550 "/>
+            }
+            else if (name ==="aws") {
+                return <SiAmazonaws className="inline-flex text-yellow-750 "/>
+            }
+            else if (name ==="javascript") {
+                return <SiJavascript className="inline-flex text-yellow-450 bg-gray-550 "/>
                 }
             else {
                 return <SiReact className="inline-flex" />
             }
+     
         }
 
 interface iconProps{
