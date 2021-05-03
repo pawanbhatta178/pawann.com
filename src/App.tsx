@@ -104,7 +104,6 @@ function App() {
           <h2 className="z-0 text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-green-700 tracking-tight mb-10">Some of my contributions in 2020/21.</h2>
         <GitHubCalendar style={{ display: "flex", justifyContent: "center" }} username="pawanbhatta178" />
         <p className=" text-gray-500 max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6  mx-auto mb-6 pt-6">I've been involved in several different projects ranging from low level codes written in C++ like <span className="font-mono text-gray-900 font-bold ">CPU schedulers</span>  and <span className="font-mono text-gray-900 font-bold ">memory allocation simulators</span> to mid level codes for <span className="font-mono text-gray-900 font-bold ">image processing</span> and <span className="font-mono text-gray-900 font-bold ">computer vision</span>  to high level full stack <span className="font-mono text-gray-900 font-bold ">web application development</span>.   </p>
-      
       </section>
       <section className="relative">
         <HorizontalScrollingCards cards={myWorks} />
