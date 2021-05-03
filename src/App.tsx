@@ -7,6 +7,7 @@ import { Button, buttonType } from './components/UI/Button';
 import {Icon } from "./components/UI/Icons";
 import { handleRedirectionToExternalLink } from './components/Logic/handleRedirectionToExternalLink';
 import {Logo } from "./components/UI/Logo";
+import { ContactCard } from "./components/UI/ContactCard";
 
 const myWorks= [{
   title: "CodingRant- A coding challenge platform",
@@ -108,11 +109,11 @@ function App() {
       <section className="relative">
         <HorizontalScrollingCards cards={myWorks} />
       </section>
-      <section ref={contactRef} className="page-component-wrapper text-center">
-        
+      <section ref={contactRef} className=" flex flex-col items-center bg-gray-100 py-6 ">
+        <h2 className="z-0 text-3xl sm:text-3xl lg:text-4xl leading-none font-extrabold text-gray-800 tracking-tight mb-10 text-center">Get in Touch 🙏</h2>
+        <ContactCard email={"pawanhatta178@gmail.com"} social={["linkedin","facebook","github"]}/>
       </section>
       
-     
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell, SiRedis, SiNginx, SiGooglecloud, SiAmazonaws, SiJavascript, SiPython , SiApachespark, SiCss3, SiGit} from "react-icons/si";
+import { SiTailwindcss, SiPostgresql, SiReact, SiTypescript, SiDocker, SiKubernetes, SiCplusplus,SiNodeDotJs, SiJava, SiPowershell, SiRedis, SiNginx, SiGooglecloud, SiAmazonaws, SiJavascript, SiPython , SiApachespark, SiCss3, SiGit, SiFacebook, SiGithub, SiLinkedin} from "react-icons/si";
 import { GoLinkExternal } from "react-icons/go";
 
 interface TechnologyIconsProps  {
@@ -76,7 +76,6 @@ interface iconProps{
 }
 
 
-
 const Icon: React.FC<iconProps> = ({ name, className }) => {
     if (name === "external_link") {
         return <GoLinkExternal className={`inline-flex ${className}`}/>
@@ -87,5 +86,27 @@ const Icon: React.FC<iconProps> = ({ name, className }) => {
 }
 
 
+interface SocialMediaIconsProps{
+    className?: string;
+    name: string;
+    onClick?: () => void;
+}
 
-export { TechnologyIcon, Icon };
+
+
+
+const SocialMediaIcon: React.FC<SocialMediaIconsProps> = ({ className, name , onClick}) => {
+    if (name === "facebook") {
+        return <SiFacebook onClick={onClick} className={`inline-flex text-gray-500 transition duration-200 ease-out hover:text-blue-950  ${className}`}/>
+    }
+    if (name === "linkedin") {
+        return <SiLinkedin onClick={onClick} className={`inline-flex text-gray-500 transition duration-300 ease-out hover:text-blue-760 ${className}`}/>
+    }
+    if (name === "github") {
+        return <SiGithub onClick={onClick} className={`inline-flex text-gray-500 duration-300 transition ease-out hover:text-gray-800 ${className}`}/>
+    }
+    return <GoLinkExternal className={`inline-flex text-blue-950 ${className}`}/>
+}
+
+
+export { TechnologyIcon, Icon, SocialMediaIcon};

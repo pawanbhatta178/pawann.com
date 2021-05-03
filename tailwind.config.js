@@ -12,7 +12,9 @@ module.exports = {
           550: "#007acc",
           650: "#0064a5",
           750: "#06B6D4",
+          760: "#2867B2", //linkedin blue
           850: "#306998", //python blue
+          860: "#4267B2", //facebook blue
           950: "#4285f4", //google blue
         },
         green: {
