@@ -85,7 +85,7 @@ function App() {
         <div className="page-component-wrapper w-full flex justify-between items-center ">
           <Logo/>
           <div className=" w-1/2 lg:w-4/12 flex justify-around primary-text-color">
-            <div className="link"  onClick={()=>handleScroll(headerRef)}>About</div>
+            <div className="link"  onClick={()=>handleScroll(headerRef)}>Abouts</div>
             <div className="link"  onClick={()=>handleScroll(workRef)}>Works</div>
             <div className="link" onClick={()=>handleScroll(contactRef)}>Contact</div>
           </div>
