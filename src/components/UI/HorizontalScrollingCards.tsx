@@ -23,11 +23,11 @@ interface ScrollingCardsProps{
     cards: CardProps[];
 }
 
-const rotationClasses:string[] = ["rotate-2","rotate-2", "rotate-1", "rotate-1","-rotate-1","-rotate-2", "-rotate-2", "-rotate-1"];
+const rotationClasses:string[] = ["rotate-1", "-rotate-1"];
 
 
 const getRandomRotationClass = (): string => {
-    const theRandomNumber = Math.floor(Math.random() * 8);
+    const theRandomNumber = Math.floor(Math.random() * 2);
     return rotationClasses[theRandomNumber];
 }
 

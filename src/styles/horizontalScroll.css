@@ -1,5 +1,5 @@
 .scroll-container {
-  animation: scroll-left 70s ease-in-out infinite alternate;
+  animation: scroll-left 53s ease-in-out infinite alternate;
   z-index: 1;
 }
 
@@ -11,16 +11,16 @@
 
 @keyframes scroll-left {
   0% {
-    transform: translate(0px);
+    transform: translate(2em);
   }
   100% {
-    transform: translate(-110em);
+    transform: translate(-122em);
   }
 }
 
 @media only screen and (min-width: 768px) {
   .scroll-container {
-    animation: scroll-left 60s ease-in-out infinite alternate;
+    animation: scroll-left 45s ease-in-out infinite alternate;
     z-index: 1;
   }
   .scroll-container:hover,
@@ -30,10 +30,10 @@
   }
   @keyframes scroll-left {
     0% {
-      transform: translate(0px);
+      transform: translate(5em);
     }
     100% {
-      transform: translate(-120em);
+      transform: translate(-150em);
     }
   }
 }

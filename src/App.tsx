@@ -19,6 +19,15 @@ const myWorks= [{
   link: "https://www.codingrant.com/",
   github:"https://github.com/pawanbhatta178/Coding_Rant_Final"
 },
+  { title: "Game of Life by John Conway",
+  languages: [ "typescript"],
+  technologies:["react", "tailwind", "css"],
+  shortDescription: "Much like life of any organisms Game of life's cells has 3 rules; either they are born, or, they survive or they die. However, it is fascinating to see how these simple sets of rules can give rise to complex structures that might possess different properties. Some complex objects keeps growing infinitely, some just glides across the screen, some simply fizzles out, while some even reproduce just like organisms do. ",
+  description: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.",
+  topics: ["Web Application Development", "UI/UX design","Backend Development","Microservices", "Contenarization"],
+  link: "http://www.gameoflife.pawann.com/",
+  github:"https://github.com/pawanbhatta178/gameOfLife2"}
+  ,
   {
   title: "Image Processing",
     languages: ["java", "c++"],
